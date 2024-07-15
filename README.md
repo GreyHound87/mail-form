@@ -1,4 +1,4 @@
-# Mail Format
+# Mail Form
 
 Сборка на Vite.
 Репо содержит master и feature.
