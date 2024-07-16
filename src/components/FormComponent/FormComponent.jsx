@@ -3,14 +3,10 @@ import { Form, Field } from 'react-final-form';
 import { Button, Grid, Typography, Box, Divider, Link } from '@mui/material';
 import { renderTextField } from '../../utils/renderTextField';
 
-export function FormComponent() {
-    const handleSubmit = (/* values */) => {
-        /* console.log('Form values:', values); */
-    };
-
+export function FormComponent({ onSubmit }) {
     return (
         <Form
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
             render={({ handleSubmit }) => (
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={4}>
