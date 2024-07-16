@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Grid, Paper, Card, Box, Typography, Link, Divider } from '@mui/material';
 import { FormComponent } from '../FormComponent';
 import { Modal } from '../Modal';
+import { setFormValues } from '../../redux/slices/formSlice';
 
 export function MailForm() {
     const [isModalOpen, setModalOpen] = useState(false);
-    const [/* formData,  */ setFormData] = useState(null);
+    const dispatch = useDispatch();
 
     const handleFormSubmit = (values) => {
         /* console.log('handleFormSubmit values:', values); */
-        setFormData(values);
+        dispatch(setFormValues(values));
         setModalOpen(true);
     };
 
