@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Paper, Card, Box, Typography, Link, Divider } from '@mui/material';
-import { Form } from '../Form';
+import { FormComponent } from '../FormComponent';
 /* import { Modal } from '../Modal'; */
 
 export function MailForm() {
@@ -22,7 +22,7 @@ export function MailForm() {
                         <Box my={2}>
                             <Divider />
                         </Box>
-                        <Form />
+                        <FormComponent />
                     </Box>
                 </Paper>
             </Grid>
