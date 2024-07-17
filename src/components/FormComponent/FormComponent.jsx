@@ -12,7 +12,7 @@ export function FormComponent({ onSubmit }) {
                     <Grid container spacing={4}>
                         <Grid item xs={12} sm={6}>
                             <Typography variant="subtitle2">Enter your first name</Typography>
-                            <Field name="firstName" component={renderTextField} label="First name *" />
+                            <Field name="firstName" component={renderTextField} label="First name *" autoFocus />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Typography variant="subtitle2">Enter your email</Typography>
