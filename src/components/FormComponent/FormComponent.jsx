@@ -12,7 +12,14 @@ export function FormComponent({ onSubmit }) {
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={4}>
                         <Grid item xs={12} sm={6}>
-                            <Typography variant="subtitle2">Enter your first name</Typography>
+                            <Typography
+                                variant="subtitle2"
+                                sx={{
+                                    fontWeight: 700,
+                                }}
+                            >
+                                Enter your first name
+                            </Typography>
                             <Field
                                 name="firstName"
                                 component={renderTextField}
@@ -22,11 +29,25 @@ export function FormComponent({ onSubmit }) {
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography variant="subtitle2">Enter your email</Typography>
+                            <Typography
+                                variant="subtitle2"
+                                sx={{
+                                    fontWeight: 700,
+                                }}
+                            >
+                                Enter your email
+                            </Typography>
                             <Field name="email" component={renderTextField} label="Email *" validate={validateEmail} />
                         </Grid>
                         <Grid item xs={12}>
-                            <Typography variant="subtitle2">Bio</Typography>
+                            <Typography
+                                variant="subtitle2"
+                                sx={{
+                                    fontWeight: 700,
+                                }}
+                            >
+                                Bio
+                            </Typography>
                             <Field
                                 name="bio"
                                 component={renderTextField}
@@ -40,18 +61,39 @@ export function FormComponent({ onSubmit }) {
                             <Divider />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography variant="subtitle2">Country</Typography>
+                            <Typography
+                                variant="subtitle2"
+                                sx={{
+                                    fontWeight: 700,
+                                }}
+                            >
+                                Country
+                            </Typography>
                             <Field name="country" component={renderTextField} label="Country *" validate={required} />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography variant="subtitle2">City</Typography>
+                            <Typography
+                                variant="subtitle2"
+                                sx={{
+                                    fontWeight: 700,
+                                }}
+                            >
+                                City
+                            </Typography>
                             <Field name="city" component={renderTextField} label="City *" validate={required} />
                         </Grid>
                         <Grid item xs={12}>
-                            <Typography variant="subtitle2">Enter your address</Typography>
+                            <Typography
+                                variant="subtitle2"
+                                sx={{
+                                    fontWeight: 700,
+                                }}
+                            >
+                                Enter your address
+                            </Typography>
                             <Field name="address" component={renderTextField} label="Address *" validate={required} />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={6}>
                             <Box mt={2}>
                                 <Typography variant="subtitle2">
                                     You may also consider to update your{' '}
@@ -61,8 +103,16 @@ export function FormComponent({ onSubmit }) {
                                     .
                                 </Typography>
                             </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
                             <Box mt={2}>
-                                <Button type="submit" variant="contained" color="primary" size="large">
+                                <Button
+                                    type="submit"
+                                    variant="contained"
+                                    color="primary"
+                                    size="large"
+                                    sx={{ width: '100%' }}
+                                >
                                     Save
                                 </Button>
                             </Box>
