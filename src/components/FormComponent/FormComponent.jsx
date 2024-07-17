@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Field } from 'react-final-form';
 import { Button, Grid, Typography, Box, Divider, Link } from '@mui/material';
 import { renderTextField } from '../../utils/renderTextField';
+import { required, validateEmail } from '../../utils/validators';
 
 export function FormComponent({ onSubmit }) {
     return (
@@ -10,32 +11,45 @@ export function FormComponent({ onSubmit }) {
             render={({ handleSubmit }) => (
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={4}>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} sm={6}>
                             <Typography variant="subtitle2">Enter your first name</Typography>
-                            <Field name="firstName" component={renderTextField} label="First name *" autoFocus />
+                            <Field
+                                name="firstName"
+                                component={renderTextField}
+                                label="First name *"
+                                autoFocus
+                                validate={required}
+                            />
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} sm={6}>
                             <Typography variant="subtitle2">Enter your email</Typography>
-                            <Field name="email" component={renderTextField} label="Email *" />
+                            <Field name="email" component={renderTextField} label="Email *" validate={validateEmail} />
                         </Grid>
                         <Grid item xs={12}>
                             <Typography variant="subtitle2">Bio</Typography>
-                            <Field name="bio" component={renderTextField} label="Bio" multiline rows={5} />
+                            <Field
+                                name="bio"
+                                component={renderTextField}
+                                label="Bio"
+                                multiline
+                                rows={5}
+                                validate={required}
+                            />
                         </Grid>
                         <Grid item xs={12}>
                             <Divider />
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} sm={6}>
                             <Typography variant="subtitle2">Country</Typography>
-                            <Field name="country" component={renderTextField} label="Country *" />
+                            <Field name="country" component={renderTextField} label="Country *" validate={required} />
                         </Grid>
-                        <Grid item xs={12} md={6}>
+                        <Grid item xs={12} sm={6}>
                             <Typography variant="subtitle2">City</Typography>
-                            <Field name="city" component={renderTextField} label="City *" />
+                            <Field name="city" component={renderTextField} label="City *" validate={required} />
                         </Grid>
                         <Grid item xs={12}>
                             <Typography variant="subtitle2">Enter your address</Typography>
-                            <Field name="address" component={renderTextField} label="Address *" />
+                            <Field name="address" component={renderTextField} label="Address *" validate={required} />
                         </Grid>
                         <Grid item xs={12}>
                             <Box mt={2}>

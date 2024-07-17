@@ -5,6 +5,7 @@ import { Form, Field } from 'react-final-form';
 import emailjs from '@emailjs/browser';
 import { DateTime } from 'luxon';
 import { renderTextField } from '../../utils/renderTextField';
+import { validateEmail } from '../../utils/validators';
 import { SERVICE_ID, TEMPLATE_ID, USER_ID } from '../../constants/configID';
 
 export function Modal({ isOpen, onClose }) {
@@ -50,6 +51,7 @@ export function Modal({ isOpen, onClose }) {
                                 required
                                 variant="outlined"
                                 autoFocus
+                                validate={validateEmail}
                             />
                             <DialogActions>
                                 <Button type="submit" color="primary" variant="contained" size="large">
