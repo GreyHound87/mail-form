@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { Grid, Paper, Card, Box, Typography, Link, Divider, Container } from '@mui/material';
-import { FormComponent } from '../FormComponent';
-import { Modal } from '../Modal';
+import { MemoizedFormComponent } from '../FormComponent';
+import { MemoizedModal } from '../Modal';
 import { setFormValues } from '../../redux/slices/formSlice';
 
 export function MailForm() {
     const [isModalOpen, setModalOpen] = useState(false);
     const dispatch = useDispatch();
 
-    const handleFormSubmit = (values) => {
-        /* console.log('handleFormSubmit values:', values); */
-        dispatch(setFormValues(values));
-        setModalOpen(true);
-    };
+    const handleFormSubmit = useCallback(
+        (values) => {
+            dispatch(setFormValues(values));
+            setModalOpen(true);
+        },
+        [dispatch]
+    );
 
-    const handleModalSubmit = (/* email */) => {
-        /* console.log('Form data:', formData);
-        console.log('Send to email:', email); */
+    const handleModalSubmit = useCallback(() => {
         setModalOpen(false);
-    };
+    }, []);
+
+    const handleModalClose = useCallback(() => {
+        setModalOpen(false);
+    }, []);
 
     return (
         <>
@@ -53,13 +57,13 @@ export function MailForm() {
                                 <Box my={2}>
                                     <Divider />
                                 </Box>
-                                <FormComponent onSubmit={handleFormSubmit} />
+                                <MemoizedFormComponent onSubmit={handleFormSubmit} />
                             </Box>
                         </Paper>
                     </Grid>
                 </Grid>
             </Container>
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} onSubmit={handleModalSubmit} />
+            <MemoizedModal isOpen={isModalOpen} onClose={handleModalClose} onSubmit={handleModalSubmit} />
         </>
     );
 }

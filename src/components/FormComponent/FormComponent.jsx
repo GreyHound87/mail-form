@@ -4,7 +4,7 @@ import { Button, Grid, Typography, Box, Divider, Link } from '@mui/material';
 import { renderTextField } from '../../utils/renderTextField';
 import { required, validateEmail } from '../../utils/validators';
 
-export function FormComponent({ onSubmit }) {
+function FormComponent({ onSubmit }) {
     return (
         <Form
             onSubmit={onSubmit}
@@ -123,3 +123,5 @@ export function FormComponent({ onSubmit }) {
         />
     );
 }
+
+export const MemoizedFormComponent = React.memo(FormComponent);

@@ -8,7 +8,7 @@ import { renderTextField } from '../../utils/renderTextField';
 import { validateEmail } from '../../utils/validators';
 import { SERVICE_ID, TEMPLATE_ID, USER_ID } from '../../constants/configID';
 
-export function Modal({ isOpen, onClose }) {
+function Modal({ isOpen, onClose }) {
     const formData = useSelector((state) => state.form.values);
 
     const handleSubmit = (values) => {
@@ -65,3 +65,5 @@ export function Modal({ isOpen, onClose }) {
         </Dialog>
     );
 }
+
+export const MemoizedModal = React.memo(Modal);

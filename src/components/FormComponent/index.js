@@ -1,1 +1,1 @@
-export { FormComponent } from './FormComponent';
+export { MemoizedFormComponent } from './FormComponent';
