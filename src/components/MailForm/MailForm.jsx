@@ -23,8 +23,8 @@ export function MailForm() {
 
     return (
         <>
-            <Grid container spacing={4}>
-                <Grid item xs={12} md={9}>
+            <Grid container spacing={4} sx={{ maxWidth: '1280px', margin: '0 auto' }}>
+                <Grid item>
                     <Paper elevation={1} component={Card}>
                         <Box p={3}>
                             <Typography variant="h6" gutterBottom>

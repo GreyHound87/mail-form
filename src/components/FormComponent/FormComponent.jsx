@@ -10,11 +10,11 @@ export function FormComponent({ onSubmit }) {
             render={({ handleSubmit }) => (
                 <form onSubmit={handleSubmit}>
                     <Grid container spacing={4}>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} md={6}>
                             <Typography variant="subtitle2">Enter your first name</Typography>
                             <Field name="firstName" component={renderTextField} label="First name *" autoFocus />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} md={6}>
                             <Typography variant="subtitle2">Enter your email</Typography>
                             <Field name="email" component={renderTextField} label="Email *" />
                         </Grid>
@@ -25,11 +25,11 @@ export function FormComponent({ onSubmit }) {
                         <Grid item xs={12}>
                             <Divider />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} md={6}>
                             <Typography variant="subtitle2">Country</Typography>
                             <Field name="country" component={renderTextField} label="Country *" />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} md={6}>
                             <Typography variant="subtitle2">City</Typography>
                             <Field name="city" component={renderTextField} label="City *" />
                         </Grid>
