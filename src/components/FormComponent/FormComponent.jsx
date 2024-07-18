@@ -1,7 +1,8 @@
 import React from 'react';
 import { Form } from 'react-final-form';
-import { Button, Grid, Typography, Box, Divider, Link } from '@mui/material';
+import { Grid, Typography, Box, Divider, Link } from '@mui/material';
 import { LabeledField } from '../LabeledField';
+import { SubmitButton } from '../SubmitButton';
 import { required, validateEmail } from '../../utils/validators';
 
 function FormComponent({ onSubmit }) {
@@ -34,17 +35,7 @@ function FormComponent({ onSubmit }) {
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Box mt={2}>
-                                <Button
-                                    type="submit"
-                                    variant="contained"
-                                    color="primary"
-                                    size="large"
-                                    sx={{ width: '100%' }}
-                                >
-                                    Save
-                                </Button>
-                            </Box>
+                            <SubmitButton label="Save" />
                         </Grid>
                     </Grid>
                 </form>
