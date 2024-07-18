@@ -7,7 +7,7 @@ export const formSlice = createSlice({
     },
     reducers: {
         setFormValues: (state, action) => {
-            state.values = action.payload;
+            state.values = { ...state.values, ...action.payload };
         },
     },
 });
