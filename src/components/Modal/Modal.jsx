@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Box, Typography, Snackbar, Alert } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Box, Typography } from '@mui/material';
 import { Form } from 'react-final-form';
 import emailjs from '@emailjs/browser';
 import { DateTime } from 'luxon';
 import { debounce } from 'lodash';
 import { LabeledField } from '../LabeledField';
 import { SubmitButton } from '../SubmitButton';
+import { CustomSnackbar } from '../CustomSnackbar';
 import { validateEmail } from '../../utils/validators';
 import { SERVICE_ID, TEMPLATE_ID, USER_ID } from '../../constants/configID';
 
@@ -74,21 +75,12 @@ function Modal({ isOpen, onClose }) {
                     />
                 </DialogContent>
             </Dialog>
-            <Snackbar
+            <CustomSnackbar
                 open={snackbarOpen}
-                autoHideDuration={6000}
+                message={snackbarMessage}
+                severity={snackbarSeverity}
                 onClose={handleSnackbarClose}
-                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-                sx={{
-                    top: '10%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                }}
-            >
-                <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
-                    {snackbarMessage}
-                </Alert>
-            </Snackbar>
+            />
         </>
     );
 }
