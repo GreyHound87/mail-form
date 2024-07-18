@@ -12,6 +12,7 @@ export function renderTextField({ input, label, meta: { touched, error }, ...cus
             fullWidth
             margin="normal"
             variant="outlined"
+            name={input.name}
         />
     );
 }

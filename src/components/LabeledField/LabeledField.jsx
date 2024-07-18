@@ -21,6 +21,7 @@ export function LabeledField({ name, label, validate, multiline, rows, fullWidth
                 validate={validate}
                 multiline={multiline}
                 rows={rows}
+                id={name}
             />
         </Grid>
     );
