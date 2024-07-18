@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import {
-    Dialog,
-    DialogTitle,
-    DialogContent,
-    DialogActions,
-    Button,
-    Box,
-    Typography,
-    Snackbar,
-    Alert,
-} from '@mui/material';
-import { Form, Field } from 'react-final-form';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Box, Typography, Snackbar, Alert } from '@mui/material';
+import { Form } from 'react-final-form';
 import emailjs from '@emailjs/browser';
 import { DateTime } from 'luxon';
 import { debounce } from 'lodash';
-import { renderTextField } from '../../utils/renderTextField';
+import { LabeledField } from '../LabeledField';
+import { SubmitButton } from '../SubmitButton';
 import { validateEmail } from '../../utils/validators';
 import { SERVICE_ID, TEMPLATE_ID, USER_ID } from '../../constants/configID';
 
@@ -74,26 +65,9 @@ function Modal({ isOpen, onClose }) {
                                         Enter the email to send the form data to:
                                     </Typography>
                                 </Box>
-                                <Field
-                                    name="email"
-                                    component={renderTextField}
-                                    label="Email"
-                                    fullWidth
-                                    required
-                                    variant="outlined"
-                                    autoFocus
-                                    validate={validateEmail}
-                                />
+                                <LabeledField name="email" label="Email" validate={validateEmail} fullWidth />
                                 <DialogActions>
-                                    <Button
-                                        type="submit"
-                                        color="primary"
-                                        variant="contained"
-                                        size="large"
-                                        disabled={isSubmitting}
-                                    >
-                                        Send
-                                    </Button>
+                                    <SubmitButton label="Send" disabled={isSubmitting} />
                                 </DialogActions>
                             </form>
                         )}
